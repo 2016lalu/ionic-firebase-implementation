@@ -1,0 +1,38 @@
+<ion-header-bar class="bar-positive">
+    <h1 class="title">Sign Up</h1>
+</ion-header-bar>
+<ion-content class="has-header padding">
+    <div class="list">
+
+         
+         <label for="files"><ons-icon icon="ion-android-camera" size="28px" fixed-width="true"></ons-icon>Select Catalog Image</label> 
+         <label class="item item-input">
+           <input type="file"  style="visibility: hidden;width:100%" id="files" fileread="user.image" ng-model="user.image"  accept="image/*" app-filereader>
+        </label>
+        <div align="center" ng-if="user != null">
+                 <img ng-src="{{user.image}}"  style="width:40%" />
+         </div>
+		<label class="item item-input">
+            <span class="input-label">Name</span>
+            <input type="text" ng-model="user.name">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Mobile</span>
+            <input type="number" ng-model="user.mobile">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Email</span>
+            <input type="text" ng-model="user.email">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Password</span>
+            <input type="password" ng-model="user.password">
+        </label>
+        <label class="item item-input">
+            <button class="button button-block button-positive" ng-click="createUser()">
+                Sign Up
+            </button>
+        </label>
+        
+    </div>
+</ion-content>

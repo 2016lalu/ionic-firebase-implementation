@@ -1,0 +1,32 @@
+<ion-view view-title="Profile">
+	  <ion-content>
+				<div class="list card">
+					
+					
+					
+					<label class="item item-input">
+						<span class="input-label">Name</span>
+						<input type="text" ng-model="profile.name">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Mobile</span>
+						<input type="number" ng-model="profile.mobile">
+					</label>
+					<label class="item item-input">
+						<span class="input-label">Email</span>
+						<input type="text" ng-model="profile.email">
+					</label>
+					
+					<!--label class="item item-input">
+						<button class="button button-block button-positive" ng-click="createUser()">
+							Sign Up
+						</button>
+					</label-->
+				</div>
+				<input type="file" ng-file-model="testFile" accept="image/*" />
+				 
+	                <input type="file" accept="image/*" image="image"/>
+                    <img ng-show="testFile" ng-src="{{testFile.url}}" style="height:50px;width:50px" />
+
+	  </ion-content>
+</ion-view>

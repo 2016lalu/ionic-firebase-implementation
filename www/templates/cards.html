@@ -1,0 +1,40 @@
+<ion-view view-title="Photos" >
+	
+<ion-content class="cards-bg">
+
+  <ion-card ng-repeat="(key, message) in photos">
+
+    <img src="{{message.images}}" onerror="this.src='img/default.jpg'" style="width: 100%;"/>
+
+    <!--ion-card-content>
+      <h2 class="card-title">
+        Nine Inch Nails Live
+      </h2>
+      <p>
+        The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+      </p>
+    </ion-card-content-->
+
+    
+  </ion-card>
+
+ 
+
+
+  </ion-content>
+  <div  class="bar bar-footer" style="position: fixed;">
+          <div class="item item-input-inset" style="width: 100%;">
+			  
+				<!--label class="item-input-wrapper">
+				 <input type="text" ng-model="newmessage.text" placeholder="message" required>
+				</label-->
+				<label class="item-input-wrapper">
+					<input type="file" fileread="photos.image" ng-model="newmessage.images"  accept="image/*" app-filereader />
+				</label>
+				 <button class="button button-small button-balanced" ng-click="inserisci(newmessage)"><i class="icon ion-android-send"></i>	</button>
+
+		  </div> 
+  </div>
+  
+  
+</ion-view>

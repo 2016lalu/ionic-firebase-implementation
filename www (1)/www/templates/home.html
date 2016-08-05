@@ -1,0 +1,111 @@
+<ion-view view-title="My App" style="color:green">
+	
+  <ion-content ng-init="load()">
+    <div class = "row">
+	    <div class = "col"> 
+		   <button class="button-light" style="background-color:royalblue" ng-click="newTask()">
+             Aks Questions
+           </button>
+        </div>
+	   <div class = "col">  
+		  Total Ques : {{aksQus.length}}
+        </div>
+        <!--div class = "col"> 
+		   <button class="button-light" style="background-color:blue" ng-click="show()">
+             Event
+           </button-->
+        </div>
+    </div>
+    
+     <div ng-show="formShow">
+		 
+	       <form name="questonForm" ng-submit="save(questonForm)" novalidate>
+			   <div align="center"> Question Form</div>
+			   <br>
+				<div align="center">
+					 <input type="text" name="queston"  class="text-input--material" ng-model="enterQues"  placeholder="Enter question">
+			    </div>
+			    
+			    <div class = "row">
+					<div class = "col"> 
+					   <button class="button button-block" ng-click="cancel()">
+						 Cancel
+					   </button>
+					</div>
+				   <div class = "col">  
+					   <button class="button button-block" ng-click="submit(enterQues)">
+						 Submit
+					   </button>
+					</div>
+				</div>		 
+			</form>
+    </div>
+    
+    <div class="list" ng-repeat="value in aksQus">
+	    <div class="item" >
+		  
+			   <p style="font-size: 20px;font-family: fantasy;color:red"> Ques:  {{value.questions}}</p>
+				<br>
+				<div ng-repeat="answw in value.answer track by $index" style="color:green"> 
+					
+					Answer:{{$index+1}} :  {{answw}}
+				
+				</div>
+		    <div>  
+			   <button class="button button-block" style="background-color:green" ng-click="ansShow =! ansShow">
+				 Give answer
+			   </button>
+			   <div ng-show="ansShow">
+					 
+					   <form name="ansForm" ng-submit="save(ansForm)" novalidate>
+						   <div align="center"> Answer Form</div>
+						   <br>
+							<div align="center">
+								 <input type="text" name="answerr"  class="text-input--material" ng-model="value.ansss"  placeholder="Enter Answer">
+							</div>
+							
+							<div class = "row">
+								<div class = "col"> 
+								   <button class="button button-block" ng-click="cancel()">
+									 Cancel
+								   </button>
+								</div>
+							   <div class = "col">  
+								   <button class="button button-block" ng-click="postAns(value);ansShow =! ansShow">
+									 Submit
+								   </button>
+								</div>
+							</div>		 
+						</form>
+				</div>
+		 </div>
+		   
+	    </div>
+	     
+    </div>
+
+			<div class="list">
+				 <div ng-repeat=" (key, message) in messages">
+				   <div class="item item-divider" >{{message.question}}</div>
+				   <div class="item">Item 1 message.user</div>
+				   <div class="item">Item 2</div>
+				   <div class="item">Item 3</div>
+	             </div>
+			</div>
+
+     
+   
+  
+  </ion-content>
+  <div  class="bar bar-footer" style="position: fixed;">
+          <div class="item item-input-inset" style="width: 100%;">
+			  
+				<label class="item-input-wrapper">
+				 <input type="text" ng-model="newmessage.question" placeholder="message" required>
+				</label>
+				 <button class="button button-small button-balanced" ng-click="inserisci(newmessage)"><i class="icon ion-android-send"></i>	</button>
+
+		  </div> 
+  </div>
+  
+</ion-view>

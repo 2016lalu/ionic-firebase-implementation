@@ -1,0 +1,26 @@
+<ion-view view-title="Device Information">
+	  <ion-content>
+				<ion-list ng-click="getCurrentLocation()">
+				   <ion-item>
+				     {{deviceInfo.platform}}
+				   </ion-item>
+					
+				   <ion-item>
+				     {{deviceInfo.version}}
+				   </ion-item>
+					
+				   <ion-item>
+				      {{deviceInfo.model}}
+				   </ion-item>
+				   <ion-item>
+				      {{deviceInfo.manufacturer}}
+				   </ion-item>
+				   <ion-item>
+				      {{deviceInfo.serial}}
+				   </ion-item>
+				</ion-list>
+		       <div id="map" data-tap-disabled="true"></div>
+
+	  </ion-content>
+	  
+</ion-view>

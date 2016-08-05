@@ -1,0 +1,26 @@
+<ion-view view-title="Device Information" ng-controller="devicetCtrl">
+	  <ion-content>
+	  <button class = "button" ng-click = "openBrowser()">OPEN BROWSER</button>
+
+				<ion-list>
+				   <ion-item>
+				     {{deviceInfo.platform}}
+				   </ion-item>
+					
+				   <ion-item>
+				     {{deviceInfo.version}}
+				   </ion-item>
+					
+				   <ion-item>
+				      {{deviceInfo.model}}
+				   </ion-item>
+				   <ion-item>
+				      {{deviceInfo.manufacturer}}
+				   </ion-item>
+				   <ion-item>
+				      {{deviceInfo.serial}}
+				   </ion-item>
+				</ion-list>
+				<div id="map" data-tap-disabled="true"></div>
+	  </ion-content>
+</ion-view>
